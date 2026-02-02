@@ -4,6 +4,11 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: read          # доступ к файлам репо
+  pages: write            # разрешение на деплой Pages
+  id-token: write         # ⚠ обязательно для новой версии deploy-pages
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
