@@ -60,8 +60,8 @@ footer .blocks .logo {
     font-weight: 800;
 }
 
-@media (max-width: 2000) {
-    h1 {
+@media (max-width: 1000) {
+    header .logo {
         font-size: 5;
     }
 }
