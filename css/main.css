@@ -60,7 +60,7 @@ footer .blocks .logo {
     font-weight: 800;
 }
 
-@media (max-width: 1000) {
+@media (max-width: 200) {
     header .logo {
         font-size: 5;
     }
