@@ -60,11 +60,13 @@ footer .blocks .logo {
     font-weight: 800;
 }
 
+/*
+halo 
 @media (max-width: 200) {
     header .logo {
         font-size: 5;
     }
-}
+} */
 
 header nav {
     float: right;
