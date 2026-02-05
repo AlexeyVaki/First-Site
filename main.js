@@ -52,7 +52,7 @@ function toggleTheme() {
 
     const isLight = document.body.classList.contains('light');
 
-    img_j.src = isLight ? 'img/Group_1321_negate.png' : 'img/Group_1321.png';
+    // img_j.src = isLight ? 'img/Group_1321_negate.png' : 'img/Group_1321.png';
     img_thm.src = isLight ? 'img/moon.png' : 'img/sun.png';
 
     trendImgs.forEach(img => {
