@@ -13,6 +13,11 @@ input.addEventListener('input', () => {
     }
 });
 
+// функция открытия меню
+function toggleMenu() {
+    document.querySelector('.nav-links').classList.toggle('open');
+}
+
 // функция нажатия кнопки джойстика
 function pressButton(dir) {
     buffer.push(dir);

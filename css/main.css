@@ -62,12 +62,21 @@ footer .blocks .logo {
     text-transform: uppercase;
     font-size: 29px;
     font-weight: 800;
-}
+}       
 
  
 header nav {
     float: right;
     width: 50%;
+}
+
+.hamburger {
+    display: none;
+    background: #000;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text-color);
 }
 
 @media (max-width: 1000px) {
@@ -82,6 +91,44 @@ header nav {
     header nav {
         width: 80%;
     }
+
+    header nav.nav-links {
+        position: fixed;      /* ← главное отличие */
+        top: 0;
+        right: -100%;         /* спрятано за экраном */
+
+        width: 50%;           /* ширина панели */
+        height: 100vh;        /* во всю высоту экрана */
+
+        background: #1E1106;
+        padding: 80px 25px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+
+        transition: right 0.3s ease;
+        z-index: 999;
+    }
+
+    .hamburger {
+        display: inline-block; /* показываем гамбургер */
+        margin-left: auto;     /* справа от лого */
+    }
+
+    header nav.nav-links ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav.nav-links ul li {
+        margin: 10px 0;
+    }
+
+        header nav.nav-links.open {
+        right: 0;
+    }
+
 }
 
 header nav ul {
