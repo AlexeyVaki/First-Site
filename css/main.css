@@ -54,6 +54,7 @@ img {
 
 header {
     padding: 50px 0;
+    white-space: nowrap;
 }
 
 header .logo, 
@@ -64,6 +65,11 @@ footer .blocks .logo {
 }
 
  
+header nav {
+    float: right;
+    width: 50%;
+}
+
 @media (max-width: 1000px) {
     header .logo {
         font-size: 15px;
@@ -72,11 +78,10 @@ footer .blocks .logo {
     .container {
         max-width: 650px;
     }
-}
 
-header nav {
-    float: right;
-    width: 50%;
+    header nav {
+        width: 80%;
+    }
 }
 
 header nav ul {
@@ -146,6 +151,9 @@ header nav ul li.thm button img {
     height: 30px;
     display: block; /* важно! чтобы не было inline-отступов */
 }
+
+
+/* HERO block */
 
 .hero {
     padding-bottom: 100px;
@@ -411,54 +419,60 @@ header nav ul li.thm button img {
     font-size: 30px;
 }
 
+.email p {
+    margin-bottom: 20px;
+}
+
 .email .block {
     background-color: var(--email-color);
     margin: 30px 0;
     border-radius: 15px;
     padding: 40px 3%;
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
+    
+    display: flex;                 /* элементы в ряд */
+    justify-content: space-between; /* пространство между текстом и полем */
+    align-items: flex-start;       /* выравнивание по верхнему краю */
+    gap: 40px;                     /* отступ между блоками */
+    flex-wrap: wrap;               /* перенос на маленьких экранах */
+}
+
+.email .block > div:first-child {
+    flex: 1 1 60%;                 /* левый текст ~60% ширины */
+}
+
+.email .email-field {
+    flex: 1 1 30%;                 /* поле с кнопкой ~30% ширины */
+    display: flex;                  /* чтобы инпут и кнопка в ряд */
     align-items: center;
+    position: relative;
 }
 
-.email h4 {
-    font-size: 30px;
-    font-weight: 500px;
-}
-
-.email .block p {
-    width: 100%;
-}
-
-.email .block input {
+.email .email-field input {
     background: #fff;
     outline: none;
     border: 0;
     border-radius: 8px;
-    width: 20%;
+    flex: 1;                        /* занимает всё доступное место */
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     padding: 20px 30px;
-    position: relative;
-    z-index: 1;
-    padding-right: 120px;
+    padding-right: 120px;           /* оставляем место для кнопки */
 }
 
-.email .block input::placeholder {
-    color: #898989
-
+.email .email-field input::placeholder {
+    color: #898989;
 }
 
-.email .block button {
+.email .email-field button {
     color: #fff;
-    padding: 13px 17px;
-    width: 88px;
-    text-align: center;
+    background: #FA9021;
     border: 0;
     cursor: pointer;
-    position: relative;
-    z-index: 2;
+    position: absolute;             /* ставим поверх инпута справа */
+    right: 5px;
+    padding: 13px 17px;
+    border-radius: 5px;
+    text-align: center;
 }
 
 
@@ -471,12 +485,11 @@ footer {
 
 footer .blocks {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 footer .blocks p {
-    width: 50%;
+    width: 100%;
     margin: 15px 0;
 }
 
