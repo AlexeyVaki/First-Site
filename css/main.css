@@ -436,12 +436,11 @@ header nav ul li.thm button img {
     outline: none;
     border: 0;
     border-radius: 8px;
-    width: 100px;
+    width: 20%;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
     padding: 20px 30px;
     position: relative;
-    right: -100px;
     z-index: 1;
     padding-right: 120px;
 }
@@ -472,11 +471,12 @@ footer {
 
 footer .blocks {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 
 footer .blocks p {
-    width: 100%;
+    width: 50%;
     margin: 15px 0;
 }
 
